@@ -7,6 +7,7 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import cn.huicheng.shop.entities.Cart;
 import cn.huicheng.shop.entities.CartItem;
@@ -22,6 +23,10 @@ public class CartController {
 	// 注入商品的Service
 	@Autowired
 	private ProductService productService;
+	
+	public CartController() {
+		System.out.println("CartController");
+	}
 
 	// 将购物项添加到购物车:执行的方法
 	@RequestMapping("cart_addCart")
@@ -43,23 +48,25 @@ public class CartController {
 	}
 
 	// 清空购物车的执行的方法:
-//	public String clearCart(){
-//		// 获得购物车对象.
-//		Cart cart = getCart();
-//		// 调用购物车中清空方法.
-//		cart.clearCart();
-//		return "clearCart";
-//	}
+	@RequestMapping("/cart_clearCart")
+	public String clearCart(HttpSession session){
+		// 获得购物车对象.
+		Cart cart = getCart(session);
+		// 调用购物车中清空方法.
+		cart.clearCart();
+		return "cart";
+	}
 	
 	// 从购物车中移除购物项的方法:
-//	public String removeCart(){
-//		// 获得购物车对象
-//		Cart cart = getCart();
-//		// 调用购物车中移除的方法:
-//		cart.removeCart(pid);
-//		// 返回页面:
-//		return "removeCart";
-//	}
+	@RequestMapping("/cart_removeCart")
+	public String removeCart(HttpSession session,@RequestParam("pid") Integer pid){
+		// 获得购物车对象
+		Cart cart = getCart(session);
+		// 调用购物车中移除的方法:
+		cart.removeCart(pid);
+		// 返回页面:
+		return "redirect:/cart_myCart";
+	}
 	
 	// 我的购物车:执行的方法
 	@RequestMapping("/cart_myCart")
