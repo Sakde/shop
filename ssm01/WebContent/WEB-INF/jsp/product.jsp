@@ -125,7 +125,10 @@
 				
 		</div>
 	</div>
-<div class="container footer">
+	
+	<%@ include file="footer.jsp" %>
+	
+<!-- <div class="container footer">
 	<div class="span24">
 		<div class="footerAd">
 					<img src="image\r___________renleipic_01/footer.jpg" alt="我们的优势" title="我们的优势" height="52" width="950"/>
@@ -174,6 +177,6 @@
 	<div class="span24">
 		<div class="copyright">Copyright © 2015-2025 网上商城 版权所有</div>
 	</div>
-</div>
+</div> -->
 </body>
 </html>

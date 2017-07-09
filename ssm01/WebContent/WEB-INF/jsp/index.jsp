@@ -290,6 +290,10 @@
 		<div class="span24">
 			<div class="copyright">Copyright © 2015-2025 网上商城 版权所有</div>
 		</div>
+		
+		
+		<br/><br/>
+		<a href="hello?i=1">Hello</a>
 	</div>
 </body>
 </html>

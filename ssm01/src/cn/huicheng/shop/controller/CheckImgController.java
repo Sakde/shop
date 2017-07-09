@@ -64,9 +64,9 @@ public class CheckImgController {
 			char c = words.charAt(index);
 			sb.append(c);
 			// 将c 输出到图片
-			graphics2d.rotate(theta, x, 20);
-			graphics2d.drawString(String.valueOf(c), x, 20);
-			graphics2d.rotate(-theta, x, 20);
+			graphics2d.rotate(theta, x, 26);
+			graphics2d.drawString(String.valueOf(c), x, 26);
+			graphics2d.rotate(-theta, x, 26);
 			x += 30;
 		}
 

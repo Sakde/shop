@@ -15,11 +15,6 @@
         <setting name="mapUnderscoreToCamelCase" value="true" />
     </settings>
     
-    <!-- 配置别名 -->
-    <typeAliases>
-    	<package name="cn.huicheng.shop.entities"/>
-    	<!-- <typeAlias alias="Person" type="com.zhwj.entity.Person"/> -->
-    </typeAliases>
     
     <!-- 配置Mapper拦截器 -->
     <!-- <plugins>

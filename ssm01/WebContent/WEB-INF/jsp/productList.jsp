@@ -116,7 +116,10 @@
 			</form>
 		</div>
 	</div>
-<div class="container footer">
+	
+	<%@ include file="footer.jsp" %>
+	
+<%-- <div class="container footer">
 	<div class="span24">
 		<div class="footerAd">
 					<img src="${pageContext.request.contextPath}/image/footer.jpg" width="950" height="52" alt="我们的优势" title="我们的优势"/>
@@ -164,5 +167,5 @@
 	<div class="span24">
 		<div class="copyright">Copyright © 2015-2025 网上商城 版权所有</div>
 	</div>
-</div>
+</div> --%>
 </body></html>

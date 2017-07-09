@@ -133,6 +133,13 @@
 		</div>
 
 	</div>
+	
+	<%@ include file="footer.jsp" %>
+	
+	
+	
+	<!-- 
+	
 	<div class="container footer">
 		<div class="span24">
 			<div class="footerAd">
@@ -156,6 +163,6 @@
 		<div class="span24">
 			<div class="copyright">Copyright © 2015-2025 网上商城 版权所有</div>
 		</div>
-	</div>
+	</div> -->
 </body>
 </html>

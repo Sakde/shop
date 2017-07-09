@@ -62,7 +62,7 @@
 								<span class="subtotal">￥${cartItem.subtotal}</span>
 							</td>
 							<td>
-								<a href="${ pageContext.request.contextPath }/cart_removeCart?pid=${cartItem.product.pid}" class="delete">删除</a>
+								<a href="${pageContext.request.contextPath}/cart_removeCart?pid=${cartItem.product.pid}" class="delete">删除</a>
 							</td>
 						</tr>
 						</c:forEach>
@@ -79,8 +79,8 @@
 					商品金额: <strong id="effectivePrice">￥${cart.total}元</strong>
 				</div>
 				<div class="bottom">
-					<a href="${ pageContext.request.contextPath }/cart_clearCart" id="clear" class="clear">清空购物车</a>
-					<a href="${ pageContext.request.contextPath }/order_saveOrder" id="submit" class="submit">提交订单</a>
+					<a href="${pageContext.request.contextPath}/cart_clearCart" id="clear" class="clear">清空购物车</a>
+					<a href="${pageContext.request.contextPath}/order_saveOrder" id="submit" class="submit">提交订单</a>
 				</div>
 				
 		</div>
@@ -93,7 +93,10 @@
 			</div>
 		</c:if>
 	</div>
-<div class="container footer">
+	
+	<%@ include file="footer.jsp" %>
+	
+<%-- <div class="container footer">
 	<div class="span24">
 		<div class="footerAd">
 					<img src="${pageContext.request.contextPath}/image/footer.jpg" width="950" height="52" alt="我们的优势" title="我们的优势"/>
@@ -141,5 +144,5 @@
 	<div class="span24">
 		<div class="copyright">Copyright © 2015-2025 网上商城 版权所有</div>
 	</div>
-</div>
+</div> --%>
 </body></html>

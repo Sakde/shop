@@ -8,7 +8,11 @@
 		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.2.xsd">
 
 	<!-- 1.配置扫描注解的包 -->
-	<context:component-scan base-package="cn.huicheng.shop"/>
+	<context:component-scan base-package="cn.huicheng.shop">
+		<!-- 不扫描controller注解 -->
+		<context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+		<context:exclude-filter type="annotation" expression="org.springframework.web.bind.annotation.ControllerAdvice"/>
+	</context:component-scan>
 
 	<!-- 引入外部配置文件 -->
 	<!-- 方法1 -->
@@ -21,10 +25,10 @@
 	<!-- 2.c3p0数据源 -->
 	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource"
 		destroy-method="close" scope="singleton">
-		<property name="driverClass" value="${driver}"></property>
-		<property name="jdbcUrl" value="${url}"></property>
+		<property name="driverClass" value="${jdbc.driver}"></property>
+		<property name="jdbcUrl" value="${jdbc.url}"></property>
 		<property name="user" value="${jdbc.username}"></property>
-		<property name="password" value="${password}"></property>
+		<property name="password" value="${jdbc.password}"></property>
 		<!-- 
 		初始连接数
 		<property name="initialPoolSize" value="${initialPoolSize}"></property>
@@ -57,7 +61,7 @@
 
 	<!-- 4.配置扫描Dao接口包，动态实现Dao接口，注入到spring容器中 -->
 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-		<!-- 注入sqlSessionFactory -->
+		<!-- 配置 sqlSessionFactory的beanName -->
 		<property name="sqlSessionFactoryBeanName" value="sqlSessionFactory" />
 		<!-- 给出需要扫描Dao接口包 -->
 		<property name="basePackage" value="cn.huicheng.shop.dao" />

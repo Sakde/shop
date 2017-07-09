@@ -29,7 +29,7 @@ public class CategoryServiceImpl implements CategoryService {
 
 	// 业务层查询所有一级分类的方法
 	public List<Category> findAll() {
-		return categoryMapper.selectAll();
+		return categoryMapper.selectByExample(null);
 	}
 	// 业务层查询所有一级分类(包括二级类目)的方法
 	public List<Category> findAllWithSecondCat() {
@@ -60,7 +60,7 @@ public class CategoryServiceImpl implements CategoryService {
 	// 业务层修改一级分类
 	public void update(Category category) {
 		CategoryExample example = new CategoryExample();
-		categoryMapper.updateByExample(category, example );
+		categoryMapper.updateByExample(category, example);
 	}
 	
 }

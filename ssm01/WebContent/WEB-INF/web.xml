@@ -7,17 +7,17 @@
 	<welcome-file-list>
 		<welcome-file>index.jsp</welcome-file>
 	</welcome-file-list>
-	<!-- 
+	
 	<context-param>  
         <param-name>contextConfigLocation</param-name>  
         <param-value>classpath:spring/spring-mybatis.xml</param-value>  
     </context-param>
 
-	SpringIOC 容器启动的监听器 
+	<!-- SpringIOC 容器启动的监听器  -->
 	<listener>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>
-	 -->
+	
 	 
 	<!-- 防止Spring内存溢出监听器 -->  
     <listener>  
@@ -30,7 +30,7 @@
 		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
 		<init-param>
 			<param-name>contextConfigLocation</param-name>
-			<param-value>classpath:spring/spring-*.xml</param-value>
+			<param-value>classpath:spring/spring-web.xml</param-value>
 		</init-param>
 		<load-on-startup>1</load-on-startup>
 	</servlet>
