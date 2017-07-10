@@ -15,21 +15,6 @@ Date: 2017-07-06 21:09:35
 
 SET FOREIGN_KEY_CHECKS=0;
 
--- ----------------------------
--- Table structure for adminuser
--- ----------------------------
-DROP TABLE IF EXISTS `adminuser`;
-CREATE TABLE `adminuser` (
-  `uid` int(11) NOT NULL AUTO_INCREMENT,
-  `username` varchar(255) DEFAULT NULL,
-  `password` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`uid`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Records of adminuser
--- ----------------------------
-INSERT INTO `adminuser` VALUES ('2', 'admin', 'admin');
 
 -- ----------------------------
 -- Table structure for category
